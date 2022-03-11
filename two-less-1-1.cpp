@@ -28,7 +28,7 @@ int main(){
     vector <long long> dp(n);
     vector <bool> can(n);
     for(long long i = 0; i < n; ++i){
-        if (g[i].t > g[i].s){
+        if (g[i].t >= g[i].s){
             dp[i] = g[i].p;
             can[i] = true;
         }
