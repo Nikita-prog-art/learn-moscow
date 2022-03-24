@@ -39,7 +39,7 @@ int main(){
             good = false;
     }
     if (stk.empty() && good)
-        cout << "YES";
+        cout << "yes";
     else
-        cout << "NO";
+        cout << "no";
 }
