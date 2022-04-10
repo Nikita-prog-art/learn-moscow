@@ -1,55 +1,62 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
-
-#define n 5
+#include <queue>
 
 using namespace std;
 
 int main(){
-    vector <int> l(5), r(5);
-    for (int i = 0; i < n; ++i)
-        cin >> l[i];
-    for (int i = 0; i < n; ++i)
-        cin >> r[i];
+    queue <int> first, second;
+    for (int i = 0; i < 5; ++i){
+        int x;
+        cin >> x;
+        first.push(x);
+    }
+    for (int i = 0; i < 5; ++i){
+        int x;
+        cin >> x;
+        second.push(x);
+    }
     int cnt = 0;
-    while(!l.empty() && !r.empty() && cnt < 1e6){
-        if(l.back() == 0 && r.back() == 9){
-            l.insert(l.begin(), l.back());
-            l.insert(l.begin(), r.back());
-            l.pop_back();
-            r.pop_back();
+    while(!first.empty() && !second.empty() && cnt <= 1e6){
+        if (first.front() == 0 && second.back() == 9){
+            int x = first.front();
+            first.pop();
+            first.push(x);
+            x = second.front();
+            second.pop();
+            first.push(x);
         }
-        else if(l.back() == 9 && r.back() == 0){
-            r.insert(r.begin(), l.back());
-            r.insert(r.begin(), r.back());
-            l.pop_back();
-            r.pop_back();
+        else if (first.front() == 9 && second.back() == 0){
+            int x = first.front();
+            first.pop();
+            second.push(x);
+            x = second.front();
+            second.pop();
+            second.push(x);
         }
-        else if(l.back() > r.back()){
-            l.insert(l.begin(), l.back());
-            l.insert(l.begin(), r.back());
-            l.pop_back();
-            r.pop_back();
+        else if (first.front() > second.back()){
+            int x = first.front();
+            first.pop();
+            first.push(x);
+            x = second.front();
+            second.pop();
+            first.push(x);
         }
-        else if(r.back() > l.back()){
-            r.insert(r.begin(), l.back());
-            r.insert(r.begin(), r.back());
-            l.pop_back();
-            r.pop_back();
+        else if (first.front() < second.back()){
+            int x = first.front();
+            first.pop();
+            second.push(x);
+            x = second.front();
+            second.pop();
+            second.push(x);
         }
         cnt++;
     }
-    if (cnt == 1e6){
-        cout << "botva" << " " << cnt;
-        return 0;
-    }
-    if (l.empty()){
-        cout << "second" << " " << cnt;
-        return 0;
-    }
-    if (r.empty()){
-        cout << "first" << " " << cnt;
-        return 0;
-    }
+    if (cnt > 1e6)
+        cout << "botva";
+    else if (first.empty())
+        cout << "second " << cnt;
+    else if (second.empty())
+        cout << "first " << cnt;
+    else
+        return -1;
 }

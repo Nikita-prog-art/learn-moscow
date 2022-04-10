@@ -4,5 +4,12 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"*.h": "cpp",
+			"iostream": "cpp",
+			"deque": "cpp",
+			"vector": "cpp"
+		}
+	}
 }
