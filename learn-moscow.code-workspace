@@ -9,7 +9,12 @@
 			"*.h": "cpp",
 			"iostream": "cpp",
 			"deque": "cpp",
-			"vector": "cpp"
+			"vector": "cpp",
+			"iosfwd": "cpp",
+			"cctype": "cpp",
+			"istream": "cpp",
+			"stack": "cpp",
+			"*.tcc": "cpp"
 		}
 	}
 }

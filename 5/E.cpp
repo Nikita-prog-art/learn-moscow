@@ -17,7 +17,7 @@ int main(){
     }
     int cnt = 0;
     while(!first.empty() && !second.empty() && cnt <= 1e6){
-        if (first.front() == 0 && second.back() == 9){
+        if (first.front() == 0 && second.front() == 9){
             int x = first.front();
             first.pop();
             first.push(x);
@@ -25,7 +25,7 @@ int main(){
             second.pop();
             first.push(x);
         }
-        else if (first.front() == 9 && second.back() == 0){
+        else if (first.front() == 9 && second.front() == 0){
             int x = first.front();
             first.pop();
             second.push(x);
@@ -33,7 +33,7 @@ int main(){
             second.pop();
             second.push(x);
         }
-        else if (first.front() > second.back()){
+        else if (first.front() > second.front()){
             int x = first.front();
             first.pop();
             first.push(x);
@@ -41,7 +41,7 @@ int main(){
             second.pop();
             first.push(x);
         }
-        else if (first.front() < second.back()){
+        else if (first.front() < second.front()){
             int x = first.front();
             first.pop();
             second.push(x);
