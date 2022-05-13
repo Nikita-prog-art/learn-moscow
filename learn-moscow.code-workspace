@@ -14,7 +14,25 @@
 			"cctype": "cpp",
 			"istream": "cpp",
 			"stack": "cpp",
-			"*.tcc": "cpp"
+			"*.tcc": "cpp",
+			"string": "cpp",
+			"array": "cpp",
+			"memory_resource": "cpp",
+			"functional": "cpp",
+			"memory": "cpp",
+			"random": "cpp",
+			"limits": "cpp",
+			"new": "cpp",
+			"numeric": "cpp",
+			"optional": "cpp",
+			"ostream": "cpp",
+			"sstream": "cpp",
+			"streambuf": "cpp",
+			"system_error": "cpp",
+			"tuple": "cpp",
+			"type_traits": "cpp",
+			"typeinfo": "cpp",
+			"string_view": "cpp"
 		}
 	}
 }
