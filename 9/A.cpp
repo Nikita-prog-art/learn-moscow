@@ -45,6 +45,7 @@ int main(){
         int u, v;
         cin >> u >> v;
         u--, v--;
+        id++;
         gr[v].push_back(Edge(u, i, id + 1, id));
         id++;
         gr[u].push_back(Edge(v, i, id - 1, id));
